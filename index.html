@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Concierge Club | Ibiza & Formentera</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#050505;
+  color:#f5f5f5;
+  overflow-x:hidden;
+}
+
+/* BACKGROUND GRAIN */
+
+body::before{
+  content:"";
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:url('https://grainy-gradients.vercel.app/noise.svg');
+  opacity:0.04;
+  pointer-events:none;
+  z-index:999;
+}
+
+/* HERO */
+
+header{
+  height:100vh;
+  background:
+  linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
+  url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2070') center/cover no-repeat;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+  position:relative;
+}
+
+.hero-content{
+  max-width:900px;
+}
+
+.hero-label{
+  color:#c8a46b;
+  letter-spacing:4px;
+  font-size:12px;
+  margin-bottom:25px;
+  text-transform:uppercase;
+}
+
+header h1{
+  font-size:72px;
+  line-height:1;
+  font-weight:600;
+  margin-bottom:30px;
+  letter-spacing:-2px;
+}
+
+header p{
+  font-size:20px;
+  line-height:1.8;
+  color:rgba(255,255,255,0.75);
+  max-width:720px;
+  margin:auto;
+}
+
+.hero-quote{
+  margin-top:40px;
+  color:#c8a46b;
+  font-size:15px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:40px;
+  padding:16px 34px;
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:50px;
+  color:white;
+  text-decoration:none;
+  backdrop-filter:blur(10px);
+  background:rgba(255,255,255,0.04);
+  transition:0.4s;
+  font-size:14px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+.btn:hover{
+  background:#c8a46b;
+  color:black;
+  transform:translateY(-2px);
+}
+
+/* SECTION */
+
+section{
+  padding:120px 20px;
+}
+
+.container{
+  max-width:1280px;
+  margin:auto;
+}
+
+.section-label{
+  color:#c8a46b;
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-size:12px;
+  margin-bottom:20px;
+}
+
+.section-title{
+  font-size:48px;
+  max-width:700px;
+  line-height:1.1;
+  margin-bottom:70px;
+  font-weight:600;
+}
+
+/* SERVICES */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:28px;
+}
+
+.card{
+  position:relative;
+  overflow:hidden;
+  border-radius:26px;
+  min-height:520px;
+  background:#111;
+}
+
+.card img{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:0.8s;
+}
+
+.card:hover img{
+  transform:scale(1.05);
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,0.92), rgba(0,0,0,0.15));
+}
+
+.card-content{
+  position:absolute;
+  bottom:0;
+  padding:35px;
+  z-index:2;
+}
+
+.card-content h3{
+  font-size:30px;
+  margin-bottom:18px;
+  font-weight:500;
+}
+
+.card-content p{
+  color:rgba(255,255,255,0.75);
+  line-height:1.8;
+  font-size:15px;
+}
+
+/* MANIFESTO */
+
+.manifesto{
+  text-align:center;
+  max-width:900px;
+  margin:auto;
+}
+
+.manifesto h2{
+  font-size:64px;
+  margin-bottom:35px;
+  line-height:1;
+  font-weight:600;
+}
+
+.manifesto p{
+  color:rgba(255,255,255,0.72);
+  line-height:2;
+  font-size:18px;
+}
+
+/* EXPERIENCE */
+
+.experience{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+
+.exp-box{
+  border:1px solid rgba(255,255,255,0.08);
+  padding:40px;
+  border-radius:24px;
+  background:rgba(255,255,255,0.02);
+  backdrop-filter:blur(10px);
+}
+
+.exp-box h3{
+  margin-bottom:18px;
+  font-size:22px;
+  font-weight:500;
+}
+
+.exp-box p{
+  color:rgba(255,255,255,0.7);
+  line-height:1.8;
+}
+
+/* CTA */
+
+.cta{
+  text-align:center;
+  padding:140px 20px;
+  background:
+  linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.82)),
+  url('https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=2070') center/cover no-repeat;
+}
+
+.cta h2{
+  font-size:58px;
+  max-width:800px;
+  margin:auto;
+  line-height:1.1;
+  margin-bottom:30px;
+}
+
+.cta p{
+  max-width:700px;
+  margin:auto;
+  color:rgba(255,255,255,0.72);
+  line-height:1.8;
+  font-size:18px;
+}
+
+/* FOOTER */
+
+footer{
+  padding:40px 20px;
+  text-align:center;
+  color:rgba(255,255,255,0.4);
+  border-top:1px solid rgba(255,255,255,0.08);
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+  position:fixed;
+  bottom:24px;
+  right:24px;
+  width:68px;
+  height:68px;
+  border-radius:50%;
+  background:#25D366;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-decoration:none;
+  font-size:30px;
+  z-index:999;
+  box-shadow:0 20px 40px rgba(0,0,0,0.35);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+header h1{
+  font-size:48px;
+}
+
+.section-title{
+  font-size:36px;
+}
+
+.manifesto h2{
+  font-size:42px;
+}
+
+.cta h2{
+  font-size:40px;
+}
+
+.card{
+  min-height:460px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="hero-content">
+
+<div class="hero-label">
+IBIZA · FORMENTERA · PRIVATE ACCESS
+</div>
+
+<h1>
+THE CONCIERGE CLUB
+</h1>
+
+<p>
+A private concierge network built for international clients seeking effortless access, discretion and exceptional experiences across Ibiza and Formentera.
+</p>
+
+<div class="hero-quote">
+Access, not advertised.
+</div>
+
+<a class="btn" href="https://wa.me/34722864877?text=Hello%20The%20Concierge%20Club">
+Request Access
+</a>
+
+</div>
+
+</header>
+
+<!-- MANIFESTO -->
+
+<section>
+
+<div class="container manifesto">
+
+<div class="section-label">
+PHILOSOPHY
+</div>
+
+<h2>
+Discretion is luxury.
+</h2>
+
+<p>
+The Concierge Club is not designed as a public-facing booking platform.
+It operates as a private network built around trusted connections, seamless execution and privileged access.
+
+Every detail is handled with speed, precision and absolute discretion.
+Less exposure. More access.
+</p>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section>
+
+<div class="container">
+
+<div class="section-label">
+SERVICES
+</div>
+
+<h2 class="section-title">
+Handled before you even ask.
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1566737236500-c8ac43014a8e?q=80&w=2070">
+
+<div class="overlay"></div>
+
+<div class="card-content">
+<h3>VIP & Nightlife</h3>
+<p>
+Priority reservations, VIP tables, high-demand venues and access to Ibiza's most exclusive nightlife experiences.
+</p>
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=2070">
+
+<div class="overlay"></div>
+
+<div class="card-content">
+<h3>Yachts & Private Experiences</h3>
+<p>
+Private yacht charters, tailored sea experiences and curated lifestyle moments across Ibiza and Formentera.
+</p>
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=2070">
+
+<div class="overlay"></div>
+
+<div class="card-content">
+<h3>Private Villas</h3>
+<p>
+Luxury villas, exclusive stays and off-market properties selected for privacy, design and location.
+</p>
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2070">
+
+<div class="overlay"></div>
+
+<div class="card-content">
+<h3>Security & Transport</h3>
+<p>
+Private chauffeurs, discreet security and premium logistics tailored to your itinerary.
+</p>
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=2070">
+
+<div class="overlay"></div>
+
+<div class="card-content">
+<h3>Wellness & Recovery</h3>
+<p>
+Personalized wellness services, recovery experiences and lifestyle management designed around your schedule.
+</p>
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?q=80&w=2070">
+
+<div class="overlay"></div>
+
+<div class="card-content">
+<h3>Private Aviation</h3>
+<p>
+Helicopters and private jet arrangements with seamless coordination and complete discretion.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- EXPERIENCE -->
+
+<section>
+
+<div class="container">
+
+<div class="section-label">
+EXPERIENCE
+</div>
+
+<h2 class="section-title">
+A private structure connected to the island's most demanded spaces.
+</h2>
+
+<div class="experience">
+
+<div class="exp-box">
+<h3>Private Access</h3>
+<p>
+Connections built through trusted relationships, not public listings.
+</p>
+</div>
+
+<div class="exp-box">
+<h3>Fast Execution</h3>
+<p>
+Efficient coordination with immediate response and effortless delivery.
+</p>
+</div>
+
+<div class="exp-box">
+<h3>International Clientele</h3>
+<p>
+Entrepreneurs, artists, VIP profiles and luxury travelers from around the world.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta">
+
+<h2>
+By request only.
+</h2>
+
+<p>
+The Concierge Club exists for clients who value privacy, efficiency and real access.
+Every request is handled personally and discreetly.
+</p>
+
+<a class="btn" href="https://wa.me/34722864877?text=Hello%20The%20Concierge%20Club">
+Contact Concierge
+</a>
+
+</section>
+
+<footer>
+© 2026 THE CONCIERGE CLUB · Ibiza & Formentera
+</footer>
+
+<a class="whatsapp" href="https://wa.me/34722864877?text=Hello%20The%20Concierge%20Club">
+💬
+</a>
+
+</body>
+</html>
